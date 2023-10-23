@@ -41,6 +41,16 @@
       <button type="submit" name="checkout" class="bg-[black] text-white px-5 py-3">Checkout</button>
     </div>
   </form>
+
+  <div class="bg-red-400">
+	{% for tag in product.tags %}
+	  {% if tag contains 'discount300' %}
+		test
+	   {% else %}
+		 test
+	  {% endif %}
+	{% endfor %}
+  </div> 
 {% else %}
   <h2>cart</h2>
   Cart is empty
