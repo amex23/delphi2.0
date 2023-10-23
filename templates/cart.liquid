@@ -30,9 +30,6 @@
               {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
               {{ item.line_price | money }}
               {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
-               {% if 'test' | split: ',' | contains: item.product.tags %}
-					Display this for products with the "test" tag
-				  {% endif %}
             </td>
           </tr>
         {% endfor %}
@@ -46,13 +43,12 @@
   </form>
 
   <div class="bg-red-400">
-	{% for tag in product.tags %}
-	  {% if tag contains 'discount300' %}
-		
-	   {% else %}
-		 test
-	  {% endif %}
-	{% endfor %}
+	{% for item in cart.items %}
+      {% if 'test' | split: ', ' | contains: item.product.tags %}
+        <!-- Display something when the product has the 'test' tag -->
+        <p>Product with 'test' tag: {{ item.product.title }}</p>
+      {% endif %}
+    {% endfor %}
   </div> 
 {% else %}
   <h2>cart</h2>
