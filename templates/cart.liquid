@@ -44,8 +44,8 @@
 
   <div class="bg-red-400">
 	{% for item in cart.items %}
-      {% if 'test' | split: ', ' | contains: item.product.tags %}
-        <!-- Display something when the product has the 'test' tag -->
+      {% if item.product.tags contains 'test' %}
+        <!-- Display something when the product has the exact 'test' tag -->
         <p>Product with 'test' tag: {{ item.product.title }}</p>
       {% endif %}
     {% endfor %}
