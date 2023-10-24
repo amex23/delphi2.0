@@ -740,6 +740,6 @@
 }
  
 
-#header {
+.header-inner {
 	background: red !important;
 }
