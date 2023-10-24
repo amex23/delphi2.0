@@ -41,6 +41,15 @@
       <button type="submit" name="checkout" class="bg-[black] text-white px-5 py-3">Checkout</button>
     </div>
   </form>
+
+  <div class="bg-red-400">
+	{% for item in cart.items %}
+      {% if item.product.tags contains 'test' %}
+        <!-- Display something when the product has the exact 'test' tag -->
+        <p>Product with 'test' tag: {{ item.product.title }}</p>
+      {% endif %}
+    {% endfor %}
+  </div> 
 {% else %}
   <h2>cart</h2>
   Cart is empty

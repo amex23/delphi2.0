@@ -61,6 +61,14 @@
 		    </div>
 
   		</div>
+
+             {% for tag in product.tags %}
+				{% if tag contains 'test' %}
+				  dsds
+				 {% else %}
+				   <p>dd</p> 
+				{% endif %}
+			  {% endfor %}
 </section>
 
 
